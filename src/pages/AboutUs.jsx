@@ -33,7 +33,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-white mt-10">
       {/* About Sections */}
       {sections.map((item, index) => (
         <div

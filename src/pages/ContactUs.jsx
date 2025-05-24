@@ -2,7 +2,7 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaTwitter, FaInstagram, FaComme
 
 export default function ContactUs() {
   return (
-    <section className="bg-white py-12 px-4">
+    <section className="bg-white py-12 px-4 mt-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-50 rounded-lg overflow-hidden">
         {/* Contact Info */}
         <div className="bg-black text-white p-8 relative">

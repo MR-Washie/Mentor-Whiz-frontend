@@ -2,7 +2,7 @@ import React from "react";
 
 const ForgotPassword = () => {
   return (
-    <div className=" flex items-center justify-center mt-15 bg-white overflow-hidden">
+    <div className=" flex items-center justify-center mt-25 bg-white overflow-hidden">
       {/* Pink Color Ball */}
       <div className="absolute right-[350px] bottom-[250px] w-80 h-80 bg-[#FF0068] rounded-full z-0"></div>
 

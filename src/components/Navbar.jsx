@@ -1,43 +1,70 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Menu, X } from 'lucide-react';
+
 
 const Navbar = () => {
-  // [verified, setVerified] = useState(false)
-  
-  return (
-    <div className="relative">
-      {/* Orange quarter-circle */}
-      <div className="absolute left-[-3%] w-32 h-32 bg-orange-400 rounded-full"></div>
+  const [isOpen, setIsOpen] = useState(false);
 
-      {/* Navbar */}
-      <nav className="w-full bg-white shadow-sm py-4 px-8 flex items-center justify-between relative z-10">
+  // const navLinks = [
+  //   'Home',
+  //   'Our Services',
+  //   'About Us',
+  //   'Become Mentor',
+  //   'Plan',
+  //   'Contact Us',
+  //   'FAQs',
+  // ];
+
+  return (
+    <header className="bg-white shadow-md fixed top-0 w-full z-50">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <img
-            src="logoMN.png" 
-            alt="Mentor Wise Logo"
-            className="h-12"
-          />
+        <div className="flex items-center space-x-2 cursor-pointer">
+          <Link to="/">
+          <img src="logoMN.png" alt="MentorWhiz" className="h-12" /></Link>
         </div>
 
-        {/* Navigation Links */}
-        <div className="flex items-center space-x-8">
-          <a href="#" className="text-gray-700 hover:text-black font-medium border-b-2 border-transparent hover:border-black"><Link to="/">Home</Link></a>
-          <a href="#" className="text-gray-700 hover:text-black font-medium border-b-2 border-transparent hover:border-black"><Link to="about-us">About Us</Link></a>
-          <a href="#" className="text-gray-700 hover:text-black font-medium border-b-2 border-transparent hover:border-black"><Link to="become-mentor">Become Mentor</Link></a>
-          <a href="#" className="text-gray-700 hover:text-black font-medium border-b-2 border-transparent hover:border-black"><Link to="/plan">Plan</Link></a>
-          <a href="#" className="text-gray-700 hover:text-black font-medium border-b-2 border-transparent hover:border-black"><Link to="/contact-us">Contact Us</Link></a>
-          <a href="#" className="text-gray-700 hover:text-black font-medium border-b-2 border-transparent hover:border-black"><Link to="/faqs">FAQs</Link></a>
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex items-center space-x-6 text-sm text-gray-700 font-medium">
+          <Link to="/" className="hover:text-black">Home</Link>
+          <Link to="/our-services" className="hover:text-black">Our Services</Link>
+          <Link to="/about-us" className="hover:text-black">About Us</Link>
+          <Link to="/become-mentor" className="hover:text-black">Become Mentor</Link>
+          <Link to="/plan" className="hover:text-black">Plan</Link>
+          <Link to="/faqs" className="hover:text-black">FAQs</Link>
+          <Link to="/contact-us" className="hover:text-black">Contact Us</Link>
+          <button className="ml-4 border px-4 py-2 rounded-md font-semibold hover:bg-gray-100">
+            <Link to="/login">Login/Signup</Link>
+          </button>
+        </nav>
 
-          {/* Login/Signup Button */}
-          <button className="ml-4 px-4 py-2 border cursor-pointer border-gray-400 rounded-md text-gray-700 hover:bg-gray-100">
-           
-              <Link to="/login">Login/Signup</Link>
-            
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X size={24} className="cursor-pointer" /> : <Menu size={24} className="cursor-pointer" />}
           </button>
         </div>
-      </nav>
-    </div>
+      </div>
+
+      {/* Mobile Menu Dropdown */}
+      {isOpen && (
+        <div className="md:hidden bg-white shadow-md">
+          <nav className="flex flex-col px-4 pb-4 space-y-2 text-sm text-gray-700 font-medium">
+            <Link to="/" className="hover:text-black hover:bg-gray-300 px-5 py-3 rounded-md">Home</Link>
+            <Link to="/our-services" className="hover:text-black hover:bg-gray-300 px-5 py-3 rounded-md">Our Services</Link>
+            <Link to="/about-us" className="hover:text-black hover:bg-gray-300 px-5 py-3 rounded-md">About Us</Link>
+            <Link to="/become-mentor" className="hover:text-black hover:bg-gray-300 px-5 py-3 rounded-md">Become Mentor</Link>
+            <Link to="/plan" className="hover:text-black hover:bg-gray-300 px-5 py-3 rounded-md">Plan</Link>
+            <Link to="/faqs" className="hover:text-black hover:bg-gray-300 px-5 py-3 rounded-md">FAQs</Link>
+            <Link to="/contact-us" className="hover:text-black hover:bg-gray-300 px-5 py-3 rounded-md">Contact Us</Link>
+            <button className="mt-2 border px-4 py-2 rounded-md font-semibold hover:bg-gray-300 w-full cursor-pointer">
+              <Link to="/login">Login/Signup</Link>
+            </button>
+          </nav>
+        </div>
+      )}
+    </header>
   );
 };
 

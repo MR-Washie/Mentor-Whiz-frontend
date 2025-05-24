@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white mt-15">
+    <footer className="bg-black text-white mt-25">
       {/* Top CTA Section */}
       <div className="bg-orange-500 text-white px-8 py-6 relative -top-10 max-w-4xl mx-auto rounded-md shadow-lg flex justify-between items-center">
         <div>

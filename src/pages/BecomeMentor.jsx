@@ -4,7 +4,7 @@ const MentorSignup = () => { const [activeSection, setActiveSection] = useState(
 
 const toggleSection = (section) => { setActiveSection(activeSection === section ? "" : section); };
 
-return ( <div className="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-md mt-10"> <h2 className="text-2xl font-bold mb-2 text-#111927">Sign up your Account</h2> <p className="mb-4 text-sm text-gray-600">Register as a mentor on MentorWhiz</p>
+return ( <div className="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-md mt-20"> <h2 className="text-2xl font-bold mb-2 text-#111927">Sign up your Account</h2> <p className="mb-4 text-sm text-gray-600">Register as a mentor on MentorWhiz</p>
 
 {/* Basic Details */}
   <div>

@@ -12,6 +12,7 @@ import AboutUs from './pages/AboutUs'
 import BecomeMentor from './pages/BecomeMentor'
 import Plan from './pages/Plan'
 import ProfilePage from './pages/ProfilePage'
+import ServiceSection from './section/ServiceSection'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
         <Route path="/become-mentor" element={<BecomeMentor />} />
         <Route path="/plan" element={<Plan />} />
         <Route path='/profile' element = {<ProfilePage />} />
+        <Route path="/our-services" element={<ServiceSection />} />
         {/* <Route path="*" element={<div>404 Not Found</div>} /> */}
       </Routes>
       <Footer />

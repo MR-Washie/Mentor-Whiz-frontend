@@ -1,5 +1,5 @@
 import React from 'react'
-import OurServices from '../components/OurServices'
+import OurServices from '../HomeComponents/OurServices'
 import HeroSection from '../HomeComponents/1'
 import AboutUsSection from '../HomeComponents/AboutUsSection'
 import MentorsSection from '../HomeComponents/3'
@@ -9,7 +9,7 @@ import FAQSection from './Faqs'
 
 const HomePage = () => {
   return (
-    <div>
+    <div className='mt-10'>
       <HeroSection />
       <AboutUsSection />
       <MentorsSection />

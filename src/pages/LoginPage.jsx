@@ -5,7 +5,7 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="mt-15 flex items-center justify-center bg-[#f4fdfc]">
+    <div className="mt-25 flex items-center justify-center bg-[#f4fdfc]">
       <div className="absolute right-[400px] w-[250px] h-[250px] bg-[#ff006e] rounded-full z-0"></div>
 
       <div className="relative z-10 bg-white p-10 rounded-xl shadow-md w-full max-w-md">
