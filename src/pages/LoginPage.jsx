@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
+<<<<<<< HEAD
 import { useAuthStore } from '../store/useAuthStore';
 import { Loader2 } from "lucide-react";
 
@@ -17,6 +18,11 @@ const LoginPage = () => {
     e.preventDefault();
     login(formData);
   };
+=======
+
+const LoginPage = () => {
+  const [showPassword, setShowPassword] = useState(false);
+>>>>>>> c5bed2e9660a64c087691cc08f5893a11632dda8
 
   return (
     <div className="mt-25 flex items-center justify-center bg-[#f4fdfc]">
@@ -27,6 +33,7 @@ const LoginPage = () => {
         <p className="text-sm mb-5">
           Don’t have an account? <span className="font-semibold text-blue-600 cursor-pointer  underline"><Link to="/signup">SIGN UP</Link></span>
         </p>
+<<<<<<< HEAD
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-sm font-medium mb-1 text-[#111927]">Your email</label>
@@ -36,6 +43,15 @@ const LoginPage = () => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+=======
+
+        <div className="mb-4">
+          <label className="block text-sm font-medium mb-1 text-[#111927]">Your User Name or email</label>
+          <input
+            type="text"
+            placeholder="Enter User name or email"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+>>>>>>> c5bed2e9660a64c087691cc08f5893a11632dda8
           />
         </div>
 
@@ -45,8 +61,11 @@ const LoginPage = () => {
             type={showPassword ? "text" : "password"}
             placeholder="Enter Password"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 pr-10"
+<<<<<<< HEAD
             value={formData.password}
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+=======
+>>>>>>> c5bed2e9660a64c087691cc08f5893a11632dda8
           />
           <button
             type="button"
@@ -67,6 +86,7 @@ const LoginPage = () => {
           </a>
         </div>
 
+<<<<<<< HEAD
         <button 
         type='submit'
          className="btn w-full bg-black text-white py-2 rounded-md hover:bg-gray-800"
@@ -83,6 +103,11 @@ const LoginPage = () => {
         </button>
         </form>
 
+=======
+        <button className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800">
+          Login
+        </button>
+>>>>>>> c5bed2e9660a64c087691cc08f5893a11632dda8
       </div>
     </div>
   );
