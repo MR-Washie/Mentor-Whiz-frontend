@@ -24,11 +24,6 @@ const AboutUs = () => {
       name: "Nikhil Kumar",
       title: "Co-Founder",
       image: "image nikhil sir.png"
-    },
-    {
-      name: "Satyam Prakash",
-      title: "Co-Founder",
-      image: "image Satyam sir.png"
     }
   ];
 
@@ -57,7 +52,7 @@ const AboutUs = () => {
 
       {/* Co-Founders Section */}
       <div className="bg-gray-100 py-16 text-center">
-        <h2 className="text-3xl font-bold mb-10">Our Co Founders</h2>
+        <h2 className="text-3xl font-bold mb-10">Our Co-Founders</h2>
         <div className="flex flex-col md:flex-row justify-center gap-10 px-4">
           {founders.map((founder, index) => (
             <div key={index} className="text-center">

@@ -1,4 +1,5 @@
 import { FaUserTie, FaBuilding, FaStar, FaUserGraduate, FaUsers, FaSearchDollar, FaBriefcase, FaProjectDiagram } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const services = [
   { icon: <FaUserTie size={40} />, title: "1on1 Coaching", desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do" },
@@ -13,7 +14,7 @@ const services = [
 
 export default function OurServices() {
   return (
-    <section className="bg-gray-100 py-12">
+    <section className="bg-gray-100 py-12 text-center">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">Our Services</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center">
@@ -26,6 +27,9 @@ export default function OurServices() {
           ))}
         </div>
       </div>
+      <Link to = "/our-services"><button className="cursor-pointer mt-15 px-6 py-2 bg-black text-white rounded-md">
+        See All
+      </button></Link>
     </section>
   );
 }

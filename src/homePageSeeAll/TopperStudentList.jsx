@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
 
 const toppers = [
   {
@@ -23,11 +21,51 @@ const toppers = [
     detail: 'App Designer',
     image: 'imageM3.png',
   },
+  {
+    name: 'Aimee Calderon',
+    detail: 'NIT',
+    image: 'imageM1.png', // Replace with actual image
+  },
+  {
+    name: 'Raymond Horn',
+    detail: 'Medical students',
+    image: 'imageM2.png',
+  },
+  {
+    name: 'Linda Towner',
+    detail: 'IIT',
+    image: 'imageM3.png',
+  },
+  {
+    name: 'Linda Towner',
+    detail: 'App Designer',
+    image: 'imageM3.png',
+  },
+  {
+    name: 'Aimee Calderon',
+    detail: 'NIT',
+    image: 'imageM1.png', // Replace with actual image
+  },
+  {
+    name: 'Raymond Horn',
+    detail: 'Medical students',
+    image: 'imageM2.png',
+  },
+  {
+    name: 'Linda Towner',
+    detail: 'IIT',
+    image: 'imageM3.png',
+  },
+  {
+    name: 'Linda Towner',
+    detail: 'App Designer',
+    image: 'imageM3.png',
+  },
 ];
 
-const TopperStudentsSection = () => {
+const TopperStudentList = () => {
   return (
-    <section className="px-6 py-16 bg-white">
+    <section className="px-6 pt-25 bg-white">
       <h2 className="text-3xl font-bold mb-8 text-left">Our Topper Students</h2>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
         {toppers.map((student, index) => (
@@ -43,10 +81,9 @@ const TopperStudentsSection = () => {
         ))}
       </div>
       <div className="text-center mt-10">
-      <Link to = "/topper-student-list"><button className="cursor-pointer px-6 py-2 bg-black text-white rounded-md">See All</button></Link>
       </div>
     </section>
   );
 };
 
-export default TopperStudentsSection;
+export default TopperStudentList;

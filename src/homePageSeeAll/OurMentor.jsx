@@ -17,11 +17,41 @@ const mentors = [
     title: 'App Designer',
     image: 'imageM3.png',
   },
+  {
+    name: 'Aimee Calderon',
+    title: 'B.Tech from NIT Patna',
+    image: 'imageM1.png',
+  },
+  {
+    name: 'Raymond Horn',
+    title: 'Digital Marketer',
+    image: 'imageM2.png',
+  },
+  {
+    name: 'Linda Towner',
+    title: 'App Designer',
+    image: 'imageM3.png',
+  },
+  {
+    name: 'Aimee Calderon',
+    title: 'B.Tech from NIT Patna',
+    image: 'imageM1.png',
+  },
+  {
+    name: 'Raymond Horn',
+    title: 'Digital Marketer',
+    image: 'imageM2.png',
+  },
+  {
+    name: 'Linda Towner',
+    title: 'App Designer',
+    image: 'imageM3.png',
+  },
 ];
 
-const MentorsSection = () => {
+const OurMentor = () => {
   return (
-    <section className="px-8 py-16 bg-white text-center">
+    <section className="px-8 pt-25 bg-white text-center">
       <h2 className="text-3xl font-bold mb-10">Our Mentors</h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -40,11 +70,8 @@ const MentorsSection = () => {
         ))}
       </div>
 
-      <button className="mt-10 px-6 py-2 bg-black text-white rounded-md">
-        <Link to="/our-mentor">See All</Link>
-      </button>
     </section>
   );
 };
 
-export default MentorsSection;
+export default OurMentor;

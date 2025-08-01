@@ -1,8 +1,22 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
+import { useAuthStore } from '../store/useAuthStore';
+import { Loader2 } from "lucide-react";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [formData, setFormData] = useState(
+    {
+      email: "",
+      password: "",
+    }
+  )
+  const { login, isLoggingIn } = useAuthStore();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    login(formData);
+  };
 
   return (
     <div className="mt-25 flex items-center justify-center bg-[#f4fdfc]">
@@ -13,13 +27,15 @@ const LoginPage = () => {
         <p className="text-sm mb-5">
           Don’t have an account? <span className="font-semibold text-blue-600 cursor-pointer  underline"><Link to="/signup">SIGN UP</Link></span>
         </p>
-
+      <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-1 text-[#111927]">Your User Name or email</label>
+          <label className="block text-sm font-medium mb-1 text-[#111927]">Your email</label>
           <input
             type="text"
-            placeholder="Enter User name or email"
+            placeholder="Enter User email"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
+            value={formData.email}
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
           />
         </div>
 
@@ -29,6 +45,8 @@ const LoginPage = () => {
             type={showPassword ? "text" : "password"}
             placeholder="Enter Password"
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 pr-10"
+            value={formData.password}
+            onChange={(e) => setFormData({ ...formData, password: e.target.value })}
           />
           <button
             type="button"
@@ -49,9 +67,22 @@ const LoginPage = () => {
           </a>
         </div>
 
-        <button className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800">
-          Login
+        <button 
+        type='submit'
+         className="btn w-full bg-black text-white py-2 rounded-md hover:bg-gray-800"
+          disabled={isLoggingIn} >
+            { isLoggingIn? (
+              <>
+                <Loader2 className="size-5 ml-43 animate-spin" />
+                Loading....
+              </>
+            ) : (
+              "Login"
+            )
+          }
         </button>
+        </form>
+
       </div>
     </div>
   );

@@ -17,9 +17,9 @@ const HeroSection = () => {
           <button className="bg-black text-white px-6 py-2 rounded-md text-sm">
             <Link to="/become-mentor">Become Mentor</Link>
           </button>
-          <button className="border border-gray-300 px-6 py-2 rounded-md text-sm hover:bg-gray-100">
+          <Link to = "/about-us"><button className="border border-gray-300 px-6 py-2 rounded-md text-sm hover:bg-gray-100">
             Learn More
-          </button>
+          </button></Link>
         </div>
       </div>
 
@@ -27,7 +27,7 @@ const HeroSection = () => {
       <div className="md:w-1/2 flex justify-center relative">
         <div className="relative z-10">
           <img
-            src="Hero Image.png"
+            src="Abhishek sir.jpg"
             alt="Mentor"
             className="rounded-lg w-72 md:w-80"
           />

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 
 const testimonials = [
@@ -19,11 +18,27 @@ const testimonials = [
     image: 'Avatar2.png',
     stars: 5,
   },
+  {
+    name: 'Shyam Kumar',
+    role: 'UX Designer at Google',
+    review:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    image: 'Avatar1.png',
+    stars: 5,
+  },
+  {
+    name: 'Shruti Aishwarya',
+    role: 'UX Designer at Google',
+    review:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    image: 'Avatar2.png',
+    stars: 5,
+  },
 ];
 
-const TestimonialsSection = () => {
+const Feedback = () => {
   return (
-    <section className="bg-white px-6 py-16 text-center">
+    <section className="bg-white px-6 py-30 text-center">
       <h2 className="text-3xl font-bold mb-4">
         What our students say <span className="italic font-medium">about us</span>
       </h2>
@@ -53,11 +68,8 @@ const TestimonialsSection = () => {
         ))}
       </div>
 
-      <Link to = "/feedback"><button className="cursor-pointer mt-10 px-6 py-2 bg-black text-white rounded-md">
-        See All
-      </button></Link>
     </section>
   );
 };
 
-export default TestimonialsSection;
+export default Feedback;
