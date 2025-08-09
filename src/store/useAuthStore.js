@@ -4,12 +4,8 @@ import toast from "react-hot-toast";
 
 
 
-<<<<<<< HEAD
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 
-=======
-const BASE_URL = "https://mentorwhiz-backend.onrender.com";
->>>>>>> ad1445f0bfa959918e4ccc28a2f387cdf68ceb88
 
 export const useAuthStore = create((set, get) => ({
     authUser: null,

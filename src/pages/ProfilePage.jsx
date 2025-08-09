@@ -202,7 +202,7 @@ export default function ProfilePage() {
             </div>
             <div className="flex">
               <span className="w-40 font-medium">Email:</span>
-              <span className="text-gray-500">sprakashtv@gmail.com</span>
+              <span className="text-gray-500">{authUser?.email}</span>
             </div>
             <div className="flex">
               <span className="w-40 font-medium">City:</span>
