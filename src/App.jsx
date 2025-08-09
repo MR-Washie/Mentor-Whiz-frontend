@@ -23,7 +23,7 @@ import TopperStudentList from './homePageSeeAll/TopperStudentList';
 import { Toaster } from "react-hot-toast";
 
 import { useAuthStore } from "./store/useAuthStore";
-import Jobs from './pages/jobs';
+import Jobs from './pages/Jobs';
 
 
 

@@ -3,7 +3,8 @@ import { axiosInstance } from "../lib/axios";
 import toast from "react-hot-toast";
 
 
-const BASE_URL = "https://mentorwhiz-backend.onrender.com";
+
+const BASE_URL = "http://localhost:3000";
 
 export const useAuthStore = create((set, get) => ({
     authUser: null,
