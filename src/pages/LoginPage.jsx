@@ -6,7 +6,7 @@ import { Loader2 } from "lucide-react";
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    email: "",
+    identifier: "",
     password: "",
   });
 
@@ -32,13 +32,14 @@ const LoginPage = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label className="block text-sm font-medium mb-1 text-[#111927]">Your email</label>
+            <label className="block text-sm font-medium mb-1 text-[#111927]">Enter your email or Username</label>
             <input
               type="text"
-              placeholder="Enter User email"
+              name='identifier'
+              placeholder="email or Username"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, identifier: e.target.value })}
             />
           </div>
 

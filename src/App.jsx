@@ -1,37 +1,21 @@
 import React from 'react';
-
+import { useEffect } from 'react';
 import Navbar from './components/Navbar';
-
 import Footer from './components/Footer';
-
 import SignUpPage from './pages/SignUpPage';
-
 import LoginPage from './pages/LoginPage';
-
 import ForgotPassword from './pages/ForgotPassword';
-
 import { Routes, Route, Navigate } from 'react-router-dom';
-
 import HomePage from './pages/HomePage';
-
 import Faqs from './pages/Faqs';
-
 import ContactUs from './pages/ContactUs';
-
 import AboutUs from './pages/AboutUs';
-
 import BecomeMentor from './pages/BecomeMentor';
-
 import Plan from './pages/Plan';
-
 import ProfilePage from './pages/ProfilePage';
-
 import ServiceSection from './section/ServiceSection';
-
 import OurMentor from './homePageSeeAll/OurMentor';
-
 import Feedback from './homePageSeeAll/Feedback';
-
 import TopperStudentList from './homePageSeeAll/TopperStudentList';
 
 
@@ -39,12 +23,17 @@ import TopperStudentList from './homePageSeeAll/TopperStudentList';
 import { Toaster } from "react-hot-toast";
 
 import { useAuthStore } from "./store/useAuthStore";
+import Jobs from './pages/jobs';
 
 
 
 const App = () => {
 
-  const { authUser } = useAuthStore();
+  const { authUser, checkAuth } = useAuthStore();
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
 
 
 
@@ -67,6 +56,7 @@ const App = () => {
         <Route path="/faqs" element={<Faqs />} />
 
         <Route path="/contact-us" element={!authUser ? <LoginPage /> : <ContactUs />} />
+        <Route path="/jobs" element={!authUser ? <LoginPage /> : <Jobs />} />
 
         <Route path="/about-us" element={<AboutUs />} />
 

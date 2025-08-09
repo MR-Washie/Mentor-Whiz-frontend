@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore";
 import { Loader2 } from "lucide-react";
+import toast from "react-hot-toast";
 
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -28,12 +29,18 @@ const SignUpPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!form.agree) {
-      alert("Please agree to the Terms and Privacy Policy.");
+    
+    if (form.password !== form.confirmPassword) {
+      // alert("Passwords do not match.");
+      toast.error("Password not same");
+      // toast.error(error.response.data.message);
+
       return;
     }
-    if (form.password !== form.confirmPassword) {
-      alert("Passwords do not match.");
+
+    if (!form.agree) {
+      // alert("Please agree to the Terms and Privacy Policy.");
+      toast.error("Please agree to the Terms and Privacy Policy.")
       return;
     }
 
@@ -74,7 +81,7 @@ const SignUpPage = () => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
           />
 
-          <input
+          {/* <input
             type="text"
             name="purpose"
             placeholder="Purpose of joining"
@@ -82,7 +89,7 @@ const SignUpPage = () => {
             onChange={handleChange}
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
-          />
+          /> */}
 
           <input
             type="email"

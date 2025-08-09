@@ -14,6 +14,7 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-6 text-sm text-gray-700 font-medium">
           <Link to="/">Home</Link>
           <Link to="/our-services">Our Services</Link>
+          <Link to="/jobs">Jobs</Link>
           <Link to="/about-us">About Us</Link>
           <Link to="/become-mentor">Become Mentor</Link>
           <Link to="/plan">Plan</Link>
@@ -39,17 +40,19 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-white shadow-md">
           <nav className="flex flex-col px-4 pb-4 space-y-2 text-sm font-medium">
-            <Link to="/">Home</Link>
-            <Link to="/our-services">Our Services</Link>
-            <Link to="/about-us">About Us</Link>
-            <Link to="/become-mentor">Become Mentor</Link>
-            <Link to="/plan">Plan</Link>
-            <Link to="/faqs">FAQs</Link>
-            <Link to="/contact-us">Contact Us</Link>
+            <Link to="/" onClick={ () => setIsOpen(false)}>Home</Link>
+            <Link to="/our-services" onClick={ () => setIsOpen(false)}>Our Services</Link>
+            <Link to="/jobs" onClick={ () => setIsOpen(false)}>Jobs</Link>
+
+            <Link to="/about-us" onClick={ () => setIsOpen(false)}>About Us</Link>
+            <Link to="/become-mentor" onClick={ () => setIsOpen(false)}>Become Mentor</Link>
+            <Link to="/plan" onClick={ () => setIsOpen(false)}>Plan</Link>
+            <Link to="/faqs" onClick={ () => setIsOpen(false)}>FAQs</Link>
+            <Link to="/contact-us" onClick={ () => setIsOpen(false)}>Contact Us</Link>
             {authUser ? (
-              <Link to="/profile">Profile</Link>
+              <Link to="/profile" onClick={ () => setIsOpen(false)}>Profile</Link>
             ) : (
-              <Link to="/login"><button>Login/Signup</button></Link>
+              <Link to="/login" onClick={ () => setIsOpen(false)}><button>Login/Signup</button></Link>
             )}
           </nav>
         </div>
