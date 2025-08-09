@@ -39,7 +39,7 @@ const MentorSignup = () => {
         formData.append(key, form[key]);
       }
   
-      await axios.post("https://mentor-whiz-frontend.onrender.com/api/mentorRegister", formData, {
+      await axios.post("https://mentorwhiz-backend.onrender.com/api/mentorRegister", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
