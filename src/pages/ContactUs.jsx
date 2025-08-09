@@ -3,6 +3,9 @@ import { useState } from "react";
 import toast from "react-hot-toast"
 import axios from "axios";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
+
 export default function ContactUs() {
 
   const quiry = [
@@ -57,7 +60,7 @@ export default function ContactUs() {
     //   }
     // };
 
-    await axios.post("http://localhost:3000/api/contact", formData, {
+    await axios.post(`${BASE_URL}/api/contact` , formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },

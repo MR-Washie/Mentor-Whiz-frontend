@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+
 import axios from "axios";
 import toast from "react-hot-toast";
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const MentorSignup = () => {
   const [activeSection, setActiveSection] = useState("basic");
@@ -39,11 +42,11 @@ const MentorSignup = () => {
         formData.append(key, form[key]);
       }
   
-      await axios.post("http://localhost:3000/api/mentorRegister", formData, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+      await axios.post(`${BASE_URL}/api/mentorRegister`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
         toast.success("Application submitted successfully!")
       } catch (err) {
         toast.error(err.response.data.message);
