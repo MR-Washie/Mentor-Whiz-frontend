@@ -9,7 +9,7 @@ export default function CoachingSection() {
         <div className="w-full md:w-1/2">
           <img
             src="service.png"
-            alt="1on1 Coaching"
+            alt="1‑on‑1 Coaching"
             className="w-full rounded-md border-[5px] border-[#ff0080] object-cover"
           />
         </div>
@@ -23,17 +23,25 @@ export default function CoachingSection() {
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              aria-hidden="true"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 4h16v16H4z" />
             </svg>
           </div>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">1on1 Coaching</h2>
+
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">1‑on‑1 Coaching</h2>
+
           <p className="text-gray-600 mb-4">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Work directly with an experienced mentor to break through roadblocks faster—get tailored guidance,
+            curated resources, and clear next steps for your goals.
           </p>
+
           <p className="text-gray-600 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Each session focuses on outcomes: skill mapping, portfolio or resume reviews, mock interviews,
+            project feedback, and an action plan you can execute immediately. Flexible scheduling and
+            follow‑up support keep you accountable.
           </p>
+
           <button className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition duration-300">
             Learn More
           </button>
@@ -42,7 +50,7 @@ export default function CoachingSection() {
 
       {/* Decorative Purple Circle */}
       <div className="hidden md:block absolute bottom-0 right-0">
-        <div className="w-40 h-40 bg-[#a020f0] rounded-full translate-x-1/2 translate-y-1/2"></div>
+        <div className="w-40 h-40 bg-[#a020f0] rounded-full translate-x-1/2 translate-y-1/2" />
       </div>
     </section>
   );
