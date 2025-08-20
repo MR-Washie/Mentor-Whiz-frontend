@@ -13,12 +13,12 @@ const Navbar = () => {
         <Link to="/"><img src="logoMN.png" alt="MentorWhiz" className="h-12" /></Link>
         <nav className="hidden md:flex items-center space-x-6 text-sm text-gray-700 font-medium">
           <Link to="/">Home</Link>
-          <Link to="/our-services">Our Services</Link>
+          {/* <Link to="/our-services">Our Services</Link> */}
           <Link to="/jobs">Jobs</Link>
-          <Link to="/about-us">About Us</Link>
+          {/* <Link to="/about-us">About Us</Link> */}
           <Link to="/become-mentor">Become Mentor</Link>
           <Link to="/plan">Plan</Link>
-          <Link to="/faqs">FAQs</Link>
+          {/* <Link to="/faqs">FAQs</Link> */}
           <Link to="/contact-us">Contact Us</Link>
           {authUser ? (
             <>

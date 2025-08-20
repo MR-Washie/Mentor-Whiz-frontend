@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { useAuthStore } from '../store/useAuthStore';
 import { Loader2 } from "lucide-react";
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,10 +14,10 @@ const LoginPage = () => {
   });
 
   const { login, isLoggingIn } = useAuthStore();
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    login(formData);
+    await login(formData,Navigate);
   };
 
   return (
@@ -38,7 +41,7 @@ const LoginPage = () => {
               name='identifier'
               placeholder="email or Username"
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              value={formData.name}
+              value={formData.identifier}
               onChange={(e) => setFormData({ ...formData, identifier: e.target.value })}
             />
           </div>
@@ -69,8 +72,7 @@ const LoginPage = () => {
             <Link to="/forgot-password" className="text-[#141414] font-medium hover:underline">
               Forgot password?
             </Link>
-          </div>
-
+          </div>        
           <button
             type="submit"
             className="btn w-full bg-black text-white py-2 rounded-md hover:bg-gray-800"
@@ -86,6 +88,22 @@ const LoginPage = () => {
             )}
           </button>
         </form>
+        
+          <div style={{textAlign: 'center'}}>or</div>
+
+        <div className="flex items-center justify-center w-full">
+          <button onClick={() => {window.location.href = `${BASE_URL}/auth/google`;}}
+            // href={`${BASE_URL}/auth/google`}
+            className="flex items-center justify-center gap-3 px-5 py-2.5 w-full border border-gray-300 rounded-lg shadow-sm hover:shadow-md bg-white hover:bg-gray-50 transition-all duration-200"
+          >
+            <img
+              src="https://www.svgrepo.com/show/355037/google.svg"
+              alt="Google logo"
+              className="w-5 h-5"
+            />
+            <span className="text-gray-700 font-medium">Login with Google</span>
+          </button >
+        </div>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ export default function Plan() {
         <p className="text-gray-500 mb-8">No contracts. No surprise fees.</p>
 
         {/* Toggle */}
-        <div className="inline-flex rounded-md overflow-hidden mb-12">
+        {/* <div className="inline-flex rounded-md overflow-hidden mb-12">
           <button
             className={`px-6 py-2 text-sm font-medium ${
               billingCycle === 'monthly'
@@ -31,7 +31,7 @@ export default function Plan() {
           >
             Yearly
           </button>
-        </div>
+        </div> */}
 
         {/* Plans */}
         <div className="grid md:grid-cols-3 gap-8 text-left">

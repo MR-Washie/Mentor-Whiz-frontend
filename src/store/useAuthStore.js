@@ -9,8 +9,11 @@ const BASE_URL = import.meta.env.VITE_BASE_URL;
 export const useAuthStore = create((set, get) => ({
     authUser: null,
     isSigningUp: false,
-    inLoggingIn: false,
+    isLoggingIn: false,
     isCheckingAuth: true,
+    profile: null,
+    isLoadingProfile: false,
+    isUpdatingProfile: false,
 
     checkAuth: async () => {
         try {
@@ -45,6 +48,8 @@ export const useAuthStore = create((set, get) => ({
       set({ authUser: res.data });
       toast.success("Logged in successfully");
 
+      if (res.data?.role === "admin") navigate("/admin");
+      else navigate("/");
     } catch (error) {
       toast.error(error.response.data.message);
     } finally {
@@ -60,8 +65,36 @@ export const useAuthStore = create((set, get) => ({
     } catch (error) {
       toast.error(error.response.data.message);
     }
-  }
+  },
 
   
 
+  fetchMyProfile: async () => {
+      set({ isLoadingProfile: true });
+      try {
+        const res = await axiosInstance.get("/api/users/me");
+        set({ profile: res.data });
+      } catch (e) {
+        console.error("fetchMyProfile error:", e);
+        toast.error(e?.response?.data?.message || "Failed to load profile");
+      } finally {
+        set({ isLoadingProfile: false });
+      }
+    },
+
+    updateMyProfile: async (payload) => {
+      set({ isUpdatingProfile: true });
+      try {
+        const res = await axiosInstance.put("/api/users/me", payload);
+        set({ profile: res.data, authUser: res.data }); // keep both in sync if used
+        toast.success("Profile updated");
+        return true;
+      } catch (e) {
+        console.error("updateMyProfile error:", e);
+        toast.error(e?.response?.data?.message || "Update failed");
+        return false;
+      } finally {
+        set({ isUpdatingProfile: false });
+      }
+    },
 }))

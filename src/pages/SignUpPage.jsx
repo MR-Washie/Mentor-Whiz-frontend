@@ -4,13 +4,15 @@ import { useAuthStore } from "../store/useAuthStore";
 import { Loader2 } from "lucide-react";
 import toast from "react-hot-toast";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const SignUpPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [form, setForm] = useState({
-    name: "",
-    username: "",
+    fullName: "",
+    userName: "",
     purpose: "",
     email: "",
     password: "",
@@ -174,6 +176,23 @@ const SignUpPage = () => {
             )}
           </button>
         </form>
+        
+          <div style={{textAlign: 'center'}}>or</div>
+
+        <div className="flex items-center justify-center w-full">
+          <button onClick={() => window.location.href = `${BASE_URL}/auth/google`}
+            // href={`${BASE_URL}/auth/google`}
+            className="flex items-center justify-center gap-3 px-5 py-2.5 w-full border border-gray-300 rounded-lg shadow-sm hover:shadow-md bg-white hover:bg-gray-50 transition-all duration-200"
+          >
+            <img
+              src="https://www.svgrepo.com/show/355037/google.svg"
+              alt="Google logo"
+              className="w-5 h-5"
+            />
+            <span className="text-gray-700 font-medium">Login with Google</span>
+          </button >
+        </div>
+        
       </div>
     </div>
   );
