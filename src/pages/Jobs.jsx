@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 // If you have a shared axios instance with baseURL+credentials, import it:
 // import { axiosInstance } from "../lib/axios";
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 function JobCard({ job }) {
   return (
@@ -97,7 +98,7 @@ export default function JobsList() {
         setError("");
         // Replace with your axios instance if available:
         // const res = await axiosInstance.get(`/api/jobs?${queryString}`);
-        const res = await fetch("http://localhost:3000/api/jobs", { credentials: "include" });
+        const res = await fetch(`${BASE_URL}/api/jobs`, { credentials: "include" });
         if (!res.ok) throw new Error(`Failed to load jobs (${res.status})`);
         const data = await res.json();
         // Expected response shape: { items: Job[], total: number }
