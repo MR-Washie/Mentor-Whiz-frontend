@@ -102,7 +102,6 @@ export default function ProfilePage() {
             </div>
             <div className="flex">
               <span className="w-40 font-medium">Email:</span>
-              <span className="text-gray-700">{user.email || "-"}</span>
             </div>
           </div>
         </div>
